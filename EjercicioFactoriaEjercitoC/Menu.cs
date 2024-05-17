@@ -78,14 +78,22 @@ namespace EjercicioFactoriaEjercitoC
             NombreEjercito = Console.ReadLine();
             foreach (IMilitarizable Ejercito in ((IEjercito)GrupoEjercitos).EjercitoListaUnidades)
             {
-                if (Ejercito.Titulo== NombreEjercito) {
+                if (Ejercito.Titulo.Equals(NombreEjercito)) {
                     Console.WriteLine("Ese Ejercito ya existe, introduce otro.");
                     NombreYaExistente = true;
                 };
             }
-            if (NombreYaExistente) CrearEjercito();
-            Console.WriteLine("Introduce el presupuesto del nuevo ejercito.");
-            Presupuesto = float.Parse(Console.ReadLine());
+            if(!NombreYaExistente)
+            {
+                Console.WriteLine("Introduce el presupuesto del nuevo ejercito.");
+                Presupuesto = float.Parse(Console.ReadLine());
+                return new EjercitoNuevo(NombreEjercito, Presupuesto);
+            }
+            if (NombreYaExistente) 
+            {
+                EjercitoNuevo Ejercito = (EjercitoNuevo)CrearEjercito();
+                Presupuesto = Ejercito.Presupuesto;
+            }
             return new EjercitoNuevo(NombreEjercito, Presupuesto);
         }
         public int OpcionesEjercito(IMilitarizable Ejercito)

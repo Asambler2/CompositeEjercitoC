@@ -45,7 +45,7 @@ namespace EjercicioFactoriaEjercitoC.Ejercito
         {
             return $"Nombre Ejercito: {this.Titulo}, Número de elementos: {this.NumElementos}, Potencia total: {this.PotenciaFuego}, " +
                 $"Blindaje total {this.Blindaje}, Velocidad total: {this.Velocidad}, Gasto total: {this.Precio}, Capacidad militar: {Math.Round(this.CapacidadMilitar, 2)}, " +
-                $"Presupuesto: {this.Presupuesto}, Presupuesto disponible: {this.Precio - this.Presupuesto}";
+                $"Presupuesto: {this.Presupuesto}, Presupuesto disponible: {this.Presupuesto - this.Precio}";
         }
         public string MostrarUnidadesEjercito()
         {
