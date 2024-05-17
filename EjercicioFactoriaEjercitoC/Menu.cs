@@ -145,8 +145,8 @@ namespace EjercicioFactoriaEjercitoC
             if (((ICosteable)Ejercito).Precio + ElPrecio > (Ejercito as EjercitoNuevo).Presupuesto)
             {
                 Console.WriteLine("Excede el presupuesto del ejercito, vuelve a generar una unidad con un precio menor o cero." 
-                    + " Excedente:" + ((Ejercito as EjercitoNuevo).Presupuesto - ElPrecio));
-                CrearUnidad(Ejercito);
+                    + " Excedente:" + (ElPrecio - (Ejercito as EjercitoNuevo).Presupuesto));
+                return Ejercito;
             }
             IMilitarizable LaUnidadNueva = new Unidad(NombreUnidad, Velocidad, Blindaje, PotenciaFuego, ElPrecio);
             ((IEjercito)Ejercito).AddUnidad(LaUnidadNueva);
