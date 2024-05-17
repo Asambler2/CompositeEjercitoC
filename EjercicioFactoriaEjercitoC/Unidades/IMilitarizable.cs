@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EjercicioFactoriaEjercitoC.Blindaje;
+using EjercicioFactoriaEjercitoC.Movimiento;
+using EjercicioFactoriaEjercitoC.Potencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +12,9 @@ namespace EjercicioFactoriaEjercitoC.Unidades
     public interface IMilitarizable
     {
         public string Titulo { get; set; }
-        public int Velocidad {  get; set; }
-        public int Blindaje { get; set; }
-        public int PotenciaFuego { get; set; }
+        public IVelocidad Velocidad {  get; set; }
+        public IBlindaje Blindaje { get; set; }
+        public IPotenciaFuego PotenciaFuego { get; set; }
         public string Mostrar();
     }
 }

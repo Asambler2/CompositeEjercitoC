@@ -7,4 +7,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Fabrica\" />
+    <Folder Include="FabricaEjercito\" />
+    <Folder Include="FabricaMovimiento\" />
+    <Folder Include="FabricaPotencia\" />
+  </ItemGroup>
+
 </Project>
